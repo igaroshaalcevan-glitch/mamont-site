@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAMONT AUTOBIOGRAPHY</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #121212;
+            font-family: 'Montserrat', sans-serif;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Контейнер для плавающих мамонтов */
+        .bg-mammoths {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Не мешают кликать */
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        /* Стиль для картинки мамонта */
+        .mammoth-img {
+            position: absolute;
+            width: 100px; /* Размер мамонта */
+            opacity: 0.15; /* Прозрачность (15%) */
+            /* Анимация: название, длительность, плавность, бесконечность */
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Разные позиции для мамонтов, чтобы они не летали кучей */
+        .m1 { top: 10%; left: 10%; animation-delay: 0s; width: 120px; }
+        .m2 { top: 20%; left: 80%; animation-delay: 1s; width: 80px; transform: scaleX(-1); /* Развернули в другую сторону */ }
+        .m3 { top: 70%; left: 15%; animation-delay: 2s; width: 150px; }
+        .m4 { top: 80%; left: 75%; animation-delay: 0.5s; width: 90px; transform: scaleX(-1); }
+        .m5 { top: 45%; left: 5%; animation-delay: 3s; width: 70px; }
+        .m6 { top: 60%; left: 85%; animation-delay: 1.5s; width: 110px; transform: scaleX(-1); }
+
+        /* Сама анимация парения */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        /* --- ДИЗАЙН ОСНОВНОГО КОНТЕНТА --- */
+        
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+            margin-bottom: 20px;
+            transition: transform 0.5s ease;
+            z-index: 1;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2rem;
+            letter-spacing: 4px;
+            text-align: center;
+            margin: 0 0 40px 0;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            font-weight: 800;
+            z-index: 1;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 300px;
+            z-index: 1;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 400;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #2a2a2a;
+            border-color: #ffffff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .btn-tg {
+            background-color: #229ED9;
+            border: none;
+        }
+        
+        .btn-tg:hover {
+            background-color: #1b86b8;
+            border: none;
+            box-shadow: 0 0 15px rgba(34, 158, 217, 0.4);
+        }
+
+        .bio-text {
+            display: none;
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-top: 20px;
+            text-align: center;
+            max-width: 400px;
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 3px solid #ffffff;
+            animation: fadeIn 0.5s;
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ФОН С ПЛАВАЮЩИМИ МАМОНТАМИ -->
+    <div class="bg-mammoths">
+        <!-- Ссылка на картинку, которую ты скинул -->
+        <img src="https://grizly.club/uploads/posts/2023-02/1675567959_grizly-club-p-mamont-klipart-26.png" class="mammoth-img m1" alt="Мамонт">
+        <img src="https://grizly.club/uploads/posts/2023-02/1675567959_grizly-club-p-mamont-klipart-26.png" class="mammoth-img m2" alt="Мамонт">
+        <img src="https://grizly.club/uploads/posts/2023-02/1675567959_grizly-club-p-mamont-klipart-26.png" class="mammoth-img m3" alt="Мамонт">
+        <img src="https://grizly.club/uploads/posts/2023-02/1675567959_grizly-club-p-mamont-klipart-26.png" class="mammoth-img m4" alt="Мамонт">
+        <img src="https://grizly.club/uploads/posts/2023-02/1675567959_grizly-club-p-mamont-klipart-26.png" class="mammoth-img m5" alt="Мамонт">
+        <img src="https://grizly.club/uploads/posts/2023-02/1675567959_grizly-club-p-mamont-klipart-26.png" class="mammoth-img m6" alt="Мамонт">
+    </div>
+
+    <!-- Твоя фотография (замени foto.jpg на название своего файла) -->
+    <img src="mamont.jpg" alt="Моё фото" class="profile-pic">
+
+    <h1>MAMONT<br>AUTOBIOGRAPHY</h1>
+
+    <div class="buttons-container">
+        <!-- Ссылка на твой ТГ (ЗАМЕНИ) -->
+        <a href="https://t.me/"mamonos" target="_blank" class="btn btn-tg">
+            Перейти в Telegram
+        </a>
+
+        <a href="javascript:void(0);" class="btn" onclick="toggleBio()">
+            Моя автобиография
+        </a>
+    </div>
+
+    <!-- Текст автобиографии (ЗАМЕНИ ТЕКСТ) -->
+    <div id="bioText" class="bio-text">
+        <p>
+            Привет. Меня зовут Мамонт. <br><br>
+          Родился 28 июня 1971 года и вырос в Претории, ЮАР в семье инженера Эррола Маска и его жены, модели Мэй Маск (урождённой Халдеман). Отец был частичным собственником замбийских изумрудных рудников рядом с озером Танганьика[25][26][27][28] и депутатом Городского совета Претории от Прогрессивной федеральной партии. Родители дали ему имя прадеда Джона Илона Халдемана, который родился в 1872 году[29]. Халдеманы — предки его по материнской линии — из швейцарских немцев. Они иммигрировали из Европы в Нью-Йорк во время Войны за независимость США, откуда впоследствии разъехались по Среднему Западу. В 1948 году дед Маска Джошуа Норман Халдеман женился на канадке, учительнице танцев Уиннифред Жозефин Флетчер (Уин). В этот же год у четы родились дочери-близнецы Кэй и Мэй, мать Маска. Дед Маска был заядлым авиатором, путешествовал со всей семьёй на собственном одномоторном самолёте по Северной Америке. В 1950 году жажда приключений заставляет семью покинуть Канаду и перебраться в Южную Африку, где Мэй в 15 лет поступает в школу моделей и начинает выходить на подиум, фотографироваться для журналов и даже становится финалисткой конкурса «Мисс Южная Африка».
+        </p>
+    </div>
+
+    <script>
+        function toggleBio() {
+            var bio = document.getElementById("bioText");
+            if (bio.style.display === "block") {
+                bio.style.display = "none";
+            } else {
+                bio.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
